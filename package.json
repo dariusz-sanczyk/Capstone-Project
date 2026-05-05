@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "dev": "npm run compile && npm run serve",
-    "serve": "http-server src -p 5173 -o",
-    "compile": "sass src/scss:src/dist/css --no-source-map && tsc --outDir src/dist/js",
+    "serve": "http-server src -p 5173 -o --cors -c-1",
+    "compile": "sass src/scss:src/dist/css --no-source-map && tsc --outDir src/dist/js && npm run copy-assets",
+    "copy-assets": "node -e \"const fs=require('fs'); const path=require('path'); const src='src/assets'; const dest='src/dist/assets'; if(!fs.existsSync(dest)){fs.mkdirSync(dest,{recursive:true})} fs.readdirSync(src).forEach(file=>{if(file.endsWith('.json')){fs.copyFileSync(path.join(src,file),path.join(dest,file))}})\"",
     "compile:watch": "npm-run-all --parallel compile:sass:watch compile:ts:watch",
     "compile:sass:watch": "sass src/scss:dist/css --no-source-map --watch",
     "compile:ts:watch": "tsc --watch",

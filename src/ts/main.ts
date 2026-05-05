@@ -22,7 +22,7 @@ export interface CartItem extends Product {
 export async function loadProducts(): Promise<Product[]> {
   try {
     console.log('Loading products from JSON file via fetch');
-    const response = await fetch('/assets/data.json');
+    const response = await fetch('/dist/assets/data.json');
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
