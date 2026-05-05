@@ -1,13 +1,15 @@
 {
   "name": "best-shop-capstone-project",
   "version": "1.0.0",
-  "description": "Best Shop - Multi-page E-commerce Suitcase Store. Capstone Project built with TypeScript, SASS, and Vite",
+  "description": "Best Shop - Multi-page E-commerce Suitcase Store. Capstone Project built with TypeScript and SASS",
   "main": "index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "compile": "sass src/scss:dist --no-source-map",
+    "dev": "npm run compile && npm run serve",
+    "serve": "http-server src -p 5173 -o",
+    "compile": "sass src/scss:dist/css --no-source-map && tsc",
+    "compile:watch": "npm-run-all --parallel compile:sass:watch compile:ts:watch",
+    "compile:sass:watch": "sass src/scss:dist/css --no-source-map --watch",
+    "compile:ts:watch": "tsc --watch",
     "lint": "npm run lint:ts && npm run lint:scss",
     "lint:ts": "eslint 'src/**/*.ts'",
     "lint:scss": "stylelint 'src/scss/**/*.scss'"
@@ -19,21 +21,20 @@
   "keywords": [
     "typescript",
     "sass",
-    "vite",
     "e-commerce",
     "capstone-project"
   ],
   "author": "Dariusz Sanczyk",
   "license": "ISC",
-  "type": "module",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.57.0",
+    "http-server": "^14.1.1",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.70.0",
     "stylelint": "^16.2.0",
     "stylelint-config-standard-scss": "^13.0.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.0"
+    "typescript": "^5.3.3"
   }
 }
