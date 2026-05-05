@@ -19,14 +19,18 @@ export interface CartItem extends Product {
   selectedSize?: string;
 }
 
-// Import data directly
-import productsData from '../assets/data.json';
-
-// Load products function
 export async function loadProducts(): Promise<Product[]> {
   try {
-    console.log('Loading products from imported JSON');
-    return productsData.data || [];
+    console.log('Loading products from JSON file via fetch');
+    const response = await fetch('/assets/data.json');
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const jsonData = await response.json();
+    console.log('Products loaded successfully:', jsonData.data?.length || 0);
+    return jsonData.data || [];
   } catch (error) {
     console.error('Error loading products:', error);
     return [];
@@ -49,8 +53,8 @@ export class CartManager {
 
   static addItem(product: Product, quantity: number = 1, size?: string, color?: string): void {
     const cart = this.getCart();
-    const existingIndex = cart.findIndex(item => 
-      item.id === product.id && 
+    const existingIndex = cart.findIndex(item =>
+      item.id === product.id &&
       item.selectedSize === (size ?? product.size) &&
       item.selectedColor === (color ?? product.color)
     );
@@ -96,12 +100,12 @@ export class CartManager {
   static getTotalPrice(): number {
     const cart = this.getCart();
     const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-    
+
     // Apply 10% discount if total exceeds $3000
     if (subtotal > 3000) {
       return subtotal * 0.9;
     }
-    
+
     return subtotal;
   }
 
@@ -238,9 +242,9 @@ export function initHamburger(): void {
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
-    if (navMenu?.classList.contains('active') && 
-        !target.closest('.nav-menu') && 
-        !target.closest('.hamburger')) {
+    if (navMenu?.classList.contains('active') &&
+      !target.closest('.nav-menu') &&
+      !target.closest('.hamburger')) {
       navMenu?.classList.remove('active');
       hamburger?.classList.remove('active');
     }

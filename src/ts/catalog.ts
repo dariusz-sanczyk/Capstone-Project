@@ -1,4 +1,4 @@
-import { loadProducts, Product, CartManager } from './main';
+import { loadProducts, Product, CartManager } from './main.js';
 
 let allProducts: Product[] = [];
 let filteredProducts: Product[] = [];
@@ -68,7 +68,7 @@ function renderProducts() {
       </div>
       <div class="product-card__content">
         <h3 class="product-card__name">${product.name}</h3>
-        <div class="product-card__rating">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5-Math.floor(product.rating))}</div>
+        <div class="product-card__rating">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</div>
         <p class="product-card__price">$${product.price}</p>
         <button class="btn btn-primary product-card__button" data-id="${product.id}">Add to Cart</button>
       </div>
@@ -114,7 +114,7 @@ function renderPagination() {
 
   const prevBtn = document.getElementById('prevPage') as HTMLButtonElement;
   const nextBtn = document.getElementById('nextPage') as HTMLButtonElement;
-  
+
   if (prevBtn) {
     prevBtn.disabled = currentPage === 1;
     prevBtn.onclick = () => {
@@ -125,7 +125,7 @@ function renderPagination() {
       }
     };
   }
-  
+
   if (nextBtn) {
     nextBtn.disabled = currentPage === totalPages || totalPages === 0;
     nextBtn.onclick = () => {
@@ -162,11 +162,11 @@ function attachProductHandlers() {
 // Setup filters with HOVER functionality
 function setupFilters() {
   const filterButtons = document.querySelectorAll('.filter-dropdown__button');
-  
+
   filterButtons.forEach(button => {
     const dropdown = button.parentElement;
     const menu = dropdown?.querySelector('.filter-dropdown__menu');
-    
+
     if (!dropdown || !menu) return;
 
     // Open on HOVER
@@ -191,8 +191,8 @@ function setupFilters() {
 
 function populateFilterMenu(menu: HTMLElement, filterType: string) {
   let options: string[] = [];
-  
-  switch(filterType) {
+
+  switch (filterType) {
     case 'category':
       options = [...new Set(allProducts.map(p => p.category))];
       break;
@@ -207,7 +207,7 @@ function populateFilterMenu(menu: HTMLElement, filterType: string) {
       break;
   }
 
-  menu.innerHTML = options.map(option => 
+  menu.innerHTML = options.map(option =>
     `<div class="filter-dropdown__item" data-filter="${filterType}" data-value="${option}">
       ${option}
     </div>`
@@ -218,13 +218,13 @@ function populateFilterMenu(menu: HTMLElement, filterType: string) {
     item.addEventListener('click', () => {
       const filterType = (item as HTMLElement).dataset.filter!;
       const value = (item as HTMLElement).dataset.value!;
-      
+
       // Remove previous selection
       menu.querySelectorAll('.filter-dropdown__item').forEach(i => i.classList.remove('selected'));
-      
+
       // Add selection and highlight
       item.classList.add('selected');
-      
+
       applyFilter(filterType, value);
     });
   });
@@ -242,7 +242,7 @@ function applyFilter(filterType: string, value: string) {
   } else {
     activeFilters[filterType as keyof typeof activeFilters] = value.toLowerCase();
   }
-  
+
   filterProducts();
 }
 
@@ -257,7 +257,7 @@ function filterProducts() {
     }
     return true;
   });
-  
+
   currentPage = 1;
   renderProducts();
 }
@@ -269,13 +269,13 @@ function setupSearch() {
 
   const performSearch = () => {
     const query = searchInput.value.trim().toLowerCase();
-    
+
     if (!query) {
       showNotFoundPopup('Please enter a search term');
       return;
     }
 
-    const foundProducts = allProducts.filter(p => 
+    const foundProducts = allProducts.filter(p =>
       p.name.toLowerCase().includes(query)
     );
 
@@ -311,9 +311,9 @@ function showNotFoundPopup(message: string) {
     </div>
   `;
   document.body.appendChild(popup);
-  
+
   popup.querySelector('.search-popup__overlay')?.addEventListener('click', () => popup.remove());
-  
+
   setTimeout(() => popup.remove(), 3000);
 }
 
@@ -322,7 +322,7 @@ function setupEventListeners() {
   sortSelect?.addEventListener('change', () => {
     const value = sortSelect.value;
     filteredProducts.sort((a, b) => {
-      switch(value) {
+      switch (value) {
         case 'price-asc': return a.price - b.price;
         case 'price-desc': return b.price - a.price;
         case 'rating': return b.rating - a.rating;
@@ -340,12 +340,12 @@ function setupEventListeners() {
     filteredProducts = [...allProducts];
     currentPage = 1;
     renderProducts();
-    
+
     // Clear all selected items
     document.querySelectorAll('.filter-dropdown__item.selected').forEach(item => {
       item.classList.remove('selected');
     });
-    
+
     // Clear search
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     if (searchInput) searchInput.value = '';

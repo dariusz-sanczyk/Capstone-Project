@@ -1,4 +1,4 @@
-import { CartManager, CartItem } from './main';
+import { CartManager, CartItem } from './main.js';
 
 function renderCart() {
   const container = document.getElementById('cartContainer');

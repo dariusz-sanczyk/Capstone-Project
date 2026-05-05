@@ -1,4 +1,4 @@
-import { loadProducts, CartManager, Product } from './main';
+import { loadProducts, CartManager, Product } from './main.js';
 
 async function loadProductDetails() {
   const params = new URLSearchParams(window.location.search);
@@ -10,7 +10,7 @@ async function loadProductDetails() {
 
   const products = await loadProducts();
   const product = products.find(p => p.id === id);
-  
+
   if (!product) {
     alert('Product not found');
     window.location.href = 'catalog.html';
@@ -147,10 +147,10 @@ function setupTabs() {
   tabButtons.forEach(button => {
     button.addEventListener('click', () => {
       const tabName = (button as HTMLElement).dataset.tab;
-      
+
       tabButtons.forEach(btn => btn.classList.remove('active'));
       tabContents.forEach(content => content.classList.remove('active'));
-      
+
       button.classList.add('active');
       document.getElementById(`${tabName}Tab`)?.classList.add('active');
     });
@@ -160,7 +160,7 @@ function setupTabs() {
 function setupQuantity() {
   let quantity = 1;
   const input = document.getElementById('quantity') as HTMLInputElement;
-  
+
   document.getElementById('decreaseQty')?.addEventListener('click', () => {
     if (quantity > 1) {
       quantity--;
@@ -178,7 +178,7 @@ function setupAddToCart(product: Product) {
   document.getElementById('addToCart')?.addEventListener('click', async () => {
     const quantityInput = document.getElementById('quantity') as HTMLInputElement;
     const quantity = parseInt(quantityInput.value);
-    
+
     CartManager.addItem(product, quantity);
     alert(`Added ${quantity} ${quantity === 1 ? 'item' : 'items'} to cart!`);
   });
@@ -187,27 +187,27 @@ function setupAddToCart(product: Product) {
 function setupReviewForm() {
   const form = document.getElementById('reviewForm') as HTMLFormElement;
   const message = document.getElementById('reviewMessage');
-  
+
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const name = (document.getElementById('reviewName') as HTMLInputElement).value;
     const rating = (document.getElementById('reviewRating') as HTMLSelectElement).value;
     const text = (document.getElementById('reviewText') as HTMLTextAreaElement).value;
-    
+
     if (!name || !rating || !text) {
       if (message) {
         message.innerHTML = '<p class="form-error">Please fill in all fields</p>';
       }
       return;
     }
-    
+
     if (message) {
       message.innerHTML = '<p class="form-success">✓ Thank you for your review! It has been submitted successfully.</p>';
     }
-    
+
     form.reset();
-    
+
     setTimeout(() => {
       if (message) message.innerHTML = '';
     }, 3000);

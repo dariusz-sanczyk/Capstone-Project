@@ -1,4 +1,4 @@
-import { loadProducts, Product, CartManager } from './main';
+import { loadProducts, Product, CartManager } from './main.js';
 
 // Render product card
 function renderProductCard(product: Product): string {
