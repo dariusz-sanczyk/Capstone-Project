@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "id": "SU001",
+      "name": "Global Explorer Max Comfort Suitcase Pro",
+      "price": 250,
+      "imageUrl": "/assets/images/Catalog Page/suitcase red-1.png",
+      "category": "suitcases",
+      "color": "red",
+      "size": "M",
+      "salesStatus": true,
+      "rating": 4.5,
+      "popularity": 90,
+      "blocks": [
+        "New Products Arrival",
+        "Selected Products"
+      ]
+    },
+    {
+      "id": "SU002",
+      "name": "Luxury Lightweight Travel Suitcase",
+      "price": 280,
+      "imageUrl": "/assets/images/Catalog Page/suitcase blue-1.png",
+      "category": "suitcases",
+      "color": "blue",
+      "size": "L",
+      "salesStatus": false,
+      "rating": 4.0,
+      "popularity": 85,
+      "blocks": [
+        "You May Also Like",
+        "Selected Products"
+      ]
+    },
+    {
+      "id": "SU003",
+      "name": "Urban Compact Travel Suitcase",
+      "price": 310,
+      "imageUrl": "/assets/images/Catalog Page/suitcase grey.png",
+      "category": "suitcases",
+      "color": "grey",
+      "size": "XL",
+      "salesStatus": true,
+      "rating": 4.7,
+      "popularity": 95,
+      "blocks": [
+        "New Products Arrival"
+      ]
+    },
+    {
+      "id": "SU004",
+      "name": "Traveller's Comfort Weekender Suitcase",
+      "price": 240,
+      "imageUrl": "/assets/images/Catalog Page/suitcase green-1.png",
+      "category": "suitcases",
+      "color": "green",
+      "size": "S",
+      "salesStatus": true,
+      "rating": 4.2,
+      "popularity": 88,
+      "blocks": [
+        "Selected Products"
+      ]
+    },
+    {
+      "id": "SU005",
+      "name": "Explorer Pro Durable Suitcase",
+      "price": 270,
+      "imageUrl": "/assets/images/Catalog Page/suitcase black.png",
+      "category": "suitcases",
+      "color": "black",
+      "size": "M",
+      "salesStatus": false,
+      "rating": 4.0,
+      "popularity": 70,
+      "blocks": [
+        "New Products Arrival"
+      ]
+    },
+    {
+      "id": "SU006",
+      "name": "Deluxe Weekender Travel Suitcase",
+      "price": 295,
+      "imageUrl": "/assets/images/Catalog Page/suitcase yellow.png",
+      "category": "suitcases",
+      "color": "yellow",
+      "size": "L",
+      "salesStatus": true,
+      "rating": 4.8,
+      "popularity": 80,
+      "blocks": [
+        "You May Also Like"
+      ]
+    },
+    {
+      "id": "SU007",
+      "name": "Compact Lightweight Traveller's Suitcase",
+      "price": 260,
+      "imageUrl": "/assets/images/Catalog Page/suitcase brown.png",
+      "category": "suitcases",
+      "color": "brown",
+      "size": "S",
+      "salesStatus": true,
+      "rating": 3.5,
+      "popularity": 72,
+      "blocks": []
+    },
+    {
+      "id": "SU008",
+      "name": "Explorer Max Expandable Suitcase",
+      "price": 320,
+      "imageUrl": "/assets/images/Catalog Page/suitcase orange.png",
+      "category": "suitcases",
+      "color": "orange",
+      "size": "XL",
+      "salesStatus": false,
+      "rating": 4.6,
+      "popularity": 92,
+      "blocks": [
+        "Selected Products"
+      ]
+    }
+  ]
+}

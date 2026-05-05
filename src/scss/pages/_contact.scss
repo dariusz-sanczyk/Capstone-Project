@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.contact-page {
+  padding: 2rem 0;
+
+  &__grid {
+    @include grid(2, 3rem);
+
+    @include mobile {
+      @include flex-column;
+    }
+  }
+
+  &__info {
+    h1 {
+      font-size: $font-size-xxl;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $text-light;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__details {
+    @include flex-column;
+    gap: 1rem;
+  }
+}
+
+.contact-form {
+  background: $background-light;
+  padding: 2rem;
+  border-radius: $border-radius-lg;
+}

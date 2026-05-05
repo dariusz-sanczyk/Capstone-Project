@@ -1,0 +1,45 @@
+// Abstracts
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+// Base
+@use 'base/reset';
+@use 'base/fonts';
+
+// Layouts
+@use 'layouts/header';
+@use 'layouts/footer';
+
+// Components
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/product-card';
+@use 'components/modal';
+@use 'components/slider';
+
+// Pages
+@use 'pages/home';
+@use 'pages/catalog';
+@use 'pages/product-details';
+@use 'pages/about';
+@use 'pages/contact';
+@use 'pages/cart';
+
+// Global styles
+.container {
+  @include container;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: $secondary-color;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: $text-light;
+  margin-bottom: 3rem;
+}

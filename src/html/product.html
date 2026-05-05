@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Best Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../scss/main.scss">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <!-- Top row: Social + Logo + Actions -->
+      <div class="header__top">
+        <div class="header__social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+
+        <div class="header__logo">
+          <a href="../index.html">
+            <span class="logo-icon">🛍️</span>
+            <span class="logo-text">BEST SHOP</span>
+          </a>
+        </div>
+
+        <div class="header__actions">
+          <button class="icon-btn" id="accountBtn" aria-label="Account">👤</button>
+          <a href="cart.html" class="icon-btn cart-btn">
+            🛒
+            <span class="cart-counter" id="cartCounter" style="display: none;">0</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom row: Navigation only -->
+      <nav class="header__nav">
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="product-details">
+    <div class="container">
+      <div id="productContainer">
+        <!-- Product will be loaded here -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeModal">&times;</button>
+      <h2 class="modal__title">Log In</h2>
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+          <span class="form-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-input">
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+            <button type="button" class="password-toggle" id="togglePassword">👁️</button>
+          </div>
+          <span class="form-error" id="passwordError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__column">
+          <h4 class="footer__title">About Us</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">Our Company</a></li>
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Our Team</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title">Shopping Links</h4>
+          <ul class="footer__links">
+            <li><a href="catalog.html">Order History</a></li>
+            <li><a href="catalog.html">Shop Orders</a></li>
+            <li><a href="#">Wish List</a></li>
+            <li><a href="catalog.html">Shop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title">Accessories</h4>
+          <ul class="footer__links">
+            <li><a href="#">Steering Stands</a></li>
+            <li><a href="#">Plugs</a></li>
+            <li><a href="#">Travel Adapters</a></li>
+            <li><a href="#">TSA Locks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title">Contact Us</h4>
+          <p class="footer__text">
+            Weekdays from 09:00-18:00. Weekend/public  
+            holidays: We're available by phone, Live Chat and email.
+          </p>
+          <div class="footer__contact">
+            <p>📞 Phone: +48-123-456-7890</p>
+            <p>✉️ info@bestshop.com</p>
+          </div>
+          <div class="footer__info">
+            <p>🏢 Mon- Fri: 8am - 9pm</p>
+            <p>🏖️ Sat-Sun: Weekend</p>
+            <p>🗺️ 123 Fifth Avenue,</p>
+            <p>New York, NY 101650</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__shipping">
+          Shipping Information: Lorem ipsum dolor sit amet consectetur in ut amet aliquam 
+          amet quam. Duis elit porttitor placerat molestie nec ullamcorper nam. Turpis 
+          tristique non faucibus vitae tortor felis venenatis. Euismod varius etiam porta  
+          faucibus consectetur pharetra amet sit vulputate libero. Auctor faucibus proin  
+          amet quis velit. Lorem auctor sed pharetra tempor est eget. Bibendum ligula  
+          viverra eget lacinia ultricies.
+        </p>
+        <p class="footer__copyright">© 2024 Best Shop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="../ts/main.ts"></script>
+  <script type="module" src="../ts/product.ts"></script>
+</body>
+</html>

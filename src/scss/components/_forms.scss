@@ -1,0 +1,75 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.form-group {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: $secondary-color;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    @include transition(border-color);
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+
+    &.error {
+      border-color: $error-color;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.form-error {
+  display: block;
+  color: $error-color;
+  font-size: 14px;
+  margin-top: 0.25rem;
+}
+
+.form-success {
+  display: block;
+  color: $success-color;
+  font-size: 14px;
+  margin-top: 0.25rem;
+}
+
+.password-input {
+  position: relative;
+
+  input {
+    padding-right: 3rem;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $text-light;
+    cursor: pointer;
+    @include transition(color);
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

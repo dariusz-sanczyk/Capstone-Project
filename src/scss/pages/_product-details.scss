@@ -1,0 +1,228 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.product-details {
+  padding: 2rem 0;
+
+  &__grid {
+    @include grid(2, 3rem);
+
+    @include mobile {
+      @include flex-column;
+    }
+  }
+
+  &__gallery {
+    img {
+      width: 100%;
+      border-radius: $border-radius-lg;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  &__info {
+    h1 {
+      font-size: $font-size-xxl;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FFB800;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+
+    span {
+      color: $text-light;
+      font-size: $font-size-base;
+    }
+  }
+
+  &__price {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+  }
+
+  &__meta {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: $background-light;
+    border-radius: $border-radius;
+
+    p {
+      margin-bottom: 0.5rem;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__sale {
+    display: inline-block;
+    background: $sale-badge;
+    color: $white;
+    padding: 0.25rem 0.75rem;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    margin-top: 0.5rem;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    label {
+      font-weight: $font-weight-semibold;
+    }
+
+    .qty-btn {
+      @include button-reset;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      @include flex-center;
+      @include transition;
+      font-size: 1.2rem;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+        border-color: $primary-color;
+      }
+    }
+
+    input {
+      width: 60px;
+      text-align: center;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  &__tabs {
+    margin-top: 4rem;
+    border-top: 2px solid $border-color;
+    padding-top: 2rem;
+  }
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid $border-color;
+
+  .tab-button {
+    @include button-reset;
+    padding: 0.75rem 1.5rem;
+    font-weight: $font-weight-semibold;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    @include transition;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &.active {
+      border-bottom-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  h3 {
+    font-size: $font-size-xl;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 2rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+      color: $text-color;
+    }
+  }
+}
+
+.review-form {
+  max-width: 600px;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: $background-light;
+  border-radius: $border-radius-lg;
+
+  h4 {
+    font-size: $font-size-lg;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button[type="submit"] {
+    width: auto;
+    min-width: 200px;
+  }
+
+  #reviewMessage {
+    .form-success {
+      color: $success-color;
+      font-weight: $font-weight-semibold;
+    }
+
+    .form-error {
+      color: $error-color;
+      font-weight: $font-weight-semibold;
+    }
+  }
+}
+
+.you-may-like {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid $border-color;
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .products-grid {
+    @include grid(4, 2rem);
+
+    @include tablet {
+      @include grid(2, 1.5rem);
+    }
+
+    @include mobile {
+      @include grid(1, 1rem);
+    }
+  }
+}

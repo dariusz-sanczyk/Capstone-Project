@@ -1,0 +1,290 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+  padding: 4rem 0;
+  background: $background-light;
+
+  &__content {
+    @include flex-between;
+    align-items: center;
+    gap: 3rem;
+
+    @include mobile {
+      @include flex-column;
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: $font-size-hero;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: $secondary-color;
+
+    @include mobile {
+      font-size: $font-size-xxl;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    color: $text-light;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  &__image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.cmo-section {
+  padding: 4rem 0;
+
+  &__grid {
+    @include grid(2, 2rem);
+
+    @include mobile {
+      @include flex-column;
+      gap: 2rem;
+    }
+  }
+}
+
+.cmo-card {
+  display: flex;
+  gap: 2rem;
+  background: $white;
+  border-radius: $border-radius-lg;
+  padding: 2rem;
+
+  @include mobile {
+    @include flex-column;
+  }
+
+  &__image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__role {
+    color: $text-light;
+    font-size: $font-size-sm;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: $text-light;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.discount-card {
+  display: flex;
+  background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+  color: $white;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+
+  @include mobile {
+    @include flex-column;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  &__image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.travel-section {
+  padding: 4rem 0;
+}
+
+.products-section {
+  padding: 4rem 0;
+}
+
+.offer-section {
+  padding: 4rem 0;
+}
+
+.offer-banner {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #1A1A1A 0%, #2D2D2D 100%);
+  color: $white;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  min-height: 350px;
+
+  @include mobile {
+    @include flex-column;
+  }
+
+  &__discount {
+    flex: 0 0 200px;
+    @include flex-center;
+    @include flex-column;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    height: 100%;
+  }
+
+  &__number {
+    font-size: 80px;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 3rem;
+  }
+
+  &__title {
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  &__image {
+    flex: 0 0 250px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.testimonials-section {
+  padding: 4rem 0;
+  background: $background-light;
+}
+
+.testimonials-grid {
+  @include grid(3, 2rem);
+
+  @include tablet {
+    @include grid(2, 1.5rem);
+  }
+
+  @include mobile {
+    @include flex-column;
+    gap: 1.5rem;
+  }
+}
+
+.testimonial-card {
+  background: $white;
+  border-radius: $border-radius-lg;
+  padding: 2rem;
+  text-align: center;
+
+  &__image {
+    margin-bottom: 1.5rem;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    color: $text-light;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  &__name {
+    font-weight: $font-weight-semibold;
+    color: $secondary-color;
+  }
+}
+
+.benefits-section {
+  padding: 4rem 0;
+  background: #2F2F2F;
+  color: $white;
+}
+
+.benefits-grid {
+  @include grid(4, 2rem);
+
+  @include tablet {
+    @include grid(2, 1.5rem);
+  }
+
+  @include mobile {
+    @include flex-column;
+    gap: 1.5rem;
+  }
+}
+
+.benefit-card {
+  text-align: center;
+
+  &__icon {
+    font-size: 48px;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    opacity: 0.8;
+    font-size: $font-size-sm;
+  }
+}

@@ -1,0 +1,62 @@
+// Colors
+$primary-color: #B92770;
+$secondary-color: #212529;
+$text-color: #2F2F2F;
+$text-light: #6C757D;
+$background-light: #F8F9FA;
+$white: #FFFFFF;
+$border-color: #DEE2E6;
+$error-color: #DC3545;
+$success-color: #28A745;
+$sale-badge: #FF0048;
+
+// Typography
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+$font-size-hero: 48px;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing
+$spacer: 1rem;
+$spacer-sm: 0.5rem;
+$spacer-md: 1.5rem;
+$spacer-lg: 2rem;
+$spacer-xl: 3rem;
+$spacer-xxl: 4rem;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1440px;
+
+// Container
+$container-max-width: 1320px;
+$container-padding: 1rem;
+
+// Transitions
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius: 8px;
+$border-radius-lg: 12px;
+
+// Shadows
+$box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+$box-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+// Z-index
+$z-index-header: 1000;
+$z-index-modal: 1050;
+$z-index-dropdown: 100;

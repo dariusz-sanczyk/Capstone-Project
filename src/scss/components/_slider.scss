@@ -1,0 +1,74 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.slider {
+  overflow: hidden;
+  position: relative;
+
+  &__track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__slide {
+    flex: 0 0 calc(25% - 0.75rem);
+    min-width: 250px;
+
+    @include tablet {
+      flex: 0 0 calc(33.333% - 0.667rem);
+    }
+
+    @include mobile {
+      flex: 0 0 calc(100% - 1rem);
+    }
+  }
+}
+
+.slide-card {
+  position: relative;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  height: 400px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include transition(transform);
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: $white;
+    padding: 2rem 1.5rem;
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 14px;
+      @include line-clamp(3);
+    }
+  }
+
+  &:hover &__overlay {
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  }
+}

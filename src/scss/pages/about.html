@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Best Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../scss/main.scss">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <!-- Top row: Social + Logo + Actions -->
+      <div class="header__top">
+        <div class="header__social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+
+        <div class="header__logo">
+          <a href="../index.html">
+            <span class="logo-icon">🛍️</span>
+            <span class="logo-text">BEST SHOP</span>
+          </a>
+        </div>
+
+        <div class="header__actions">
+          <button class="icon-btn" id="accountBtn" aria-label="Account">👤</button>
+          <a href="cart.html" class="icon-btn cart-btn">
+            🛒
+            <span class="cart-counter" id="cartCounter" style="display: none;">0</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom row: Navigation only -->
+      <nav class="header__nav">
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="about.html" class="nav-link active">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="about-page">
+    <!-- Hero Section with Banner -->
+    <section class="about-hero">
+      <div class="about-hero__content">
+        <h1>About Us</h1>
+        <p>Deleniti perferendis doloribus pharetra vulputate<br>pulvinar lectus porttitor condimentum.</p>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="about-benefits">
+      <div class="container">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-card__icon">🎯</div>
+            <h3>Superior Accuracy</h3>
+            <p>Qiuviat vestibulum elit vel neque pharetra vulputate scelerisque nisl urna.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-card__icon">🏆</div>
+            <h3>Awards</h3>
+            <p>Vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisl urna.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-card__icon">🌿</div>
+            <h3>Ecological</h3>
+            <p>Elit vel neque duis vestibulum pharetra vulputatequisque scelerisque nisl urna.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-card__icon">🌍</div>
+            <h3>Shipping Worldwide</h3>
+            <p>Quisque scelerisque nisl urna. Duis vestibulum elit vel neque pharetra vulputate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="about-new-arrivals">
+      <div class="container">
+        <div class="new-arrivals-content">
+          <div class="new-arrivals-text">
+            <h2>New Arrivals Every Week</h2>
+            <p>Duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisl urna. Duis rutrum non risus ut imperdiet. Proin molestie accumsan nulla et. Quisque scelerisque nisl urna rutrum.</p>
+            <p>Vivamus vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisl urna. Duis vestibulum elit vel neque pharetra vulputatequisque scelerisque nisl urna.</p>
+            <button class="btn btn-primary">See All Models</button>
+          </div>
+          <div class="new-arrivals-image">
+            <img src="../assets/images/About Us/banner image.jpg" alt="New Arrivals">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="about-team">
+      <div class="container">
+        <h2>Our Incredible Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="team-member__image">
+              <img src="../assets/images/About Us/Natalia Foster image.png" alt="Natalia Foster">
+            </div>
+            <h3>NATALIA FOSTER</h3>
+            <p>Product Manager</p>
+          </div>
+          <div class="team-member">
+            <div class="team-member__image">
+              <img src="../assets/images/About Us/Alexandra Thompson.png" alt="Alexandra Thompson">
+            </div>
+            <h3>ALEXANDRA THOMPSON</h3>
+            <p>Graphic Designer</p>
+          </div>
+          <div class="team-member">
+            <div class="team-member__image">
+              <img src="../assets/images/About Us/Iryna Brooks.png" alt="Iryna Brooks">
+            </div>
+            <h3>IRYNA BROOKS</h3>
+            <p>Head Of Marketing</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="about-offer">
+      <div class="container">
+        <div class="offer-content">
+          <div class="offer-badge">
+            <div class="offer-percentage">50%</div>
+            <p>Curabitur vulputate arcu porta, ac facilisis diam.</p>
+          </div>
+          <div class="offer-text">
+            <h2>Offer Of The Month</h2>
+            <p>Curabitur vulputate arcu porta ac facilisis diam accumsan ut. Id imperdiet ac ties in vulputate.</p>
+            <button class="btn btn-primary">Get Offer Today</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div class="modal" id="loginModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeModal">&times;</button>
+      <h2 class="modal__title">Log In</h2>
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+          <span class="form-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-input">
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+            <button type="button" class="password-toggle" id="togglePassword">👁️</button>
+          </div>
+          <span class="form-error" id="passwordError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <!-- Benefits Bar -->
+    <div class="footer__benefits">
+      <div class="container">
+        <div class="benefits-bar">
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <p>Velit nisl sodales eget<br>donec quis. vulputate orci.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">📦</div>
+            <p>Dolor eu varius. Morbi<br>fermentum velit nisl.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🌱</div>
+            <p>Maecenas fames ac ante<br>ipsum primis in faucibus.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🎓</div>
+            <p>Nisl sodales eget donec<br>quis. vulputate orci.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="footer__main">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__column">
+            <h4>About Us</h4>
+            <ul>
+              <li><a href="#">Organisation</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Clients</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4>Interesting Links</h4>
+            <ul>
+              <li><a href="#">Photo Gallery</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Socials</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4>Achievements</h4>
+            <ul>
+              <li><a href="#">Winning Awards</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Our Amazing Clients</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4>Contact Us</h4>
+            <p>Bendunt dolor eu varius. Morbi fermentum velitsodales egetdonec. vulputate orci. Sed ipsum felis, tristique egestas et, convallis ac velit consequat nec luctus.</p>
+            <div class="footer__contact">
+              <p>📞 Phone: (+63) 236 6322</p>
+              <p>✉️ public@news.com</p>
+              <p>🕐 Mon - Fri: 10am - 6pm</p>
+              <p>🕐 Sat - Sun: 10am - 6pm</p>
+              <p>📍 639 Jade Valley,<br>Washington DC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shipping Information -->
+    <div class="footer__shipping">
+      <div class="container">
+        <h4>Shipping Information</h4>
+        <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta sapien, vel finibus felis nisi vel porttitor sagittis eros in tincidunt aliqueet.</p>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© Copyright 2025</p>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="../ts/main.ts"></script>
+</body>
+</html>

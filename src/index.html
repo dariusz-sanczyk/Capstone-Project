@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Shop - Smart Styles for Every Destination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./scss/main.scss">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <!-- Top row: Social + Logo + Actions -->
+      <div class="header__top">
+        <div class="header__social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+
+        <div class="header__logo">
+          <a href="index.html">
+            <span class="logo-icon">🛍️</span>
+            <span class="logo-text">BEST SHOP</span>
+          </a>
+        </div>
+
+        <div class="header__actions">
+          <button class="icon-btn" id="accountBtn" aria-label="Account">👤</button>
+          <a href="html/cart.html" class="icon-btn cart-btn">
+            🛒
+            <span class="cart-counter" id="cartCounter" style="display: none;">0</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom row: Navigation only -->
+      <nav class="header__nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="html/catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="html/about.html" class="nav-link">About Us</a></li>
+          <li><a href="html/contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeModal">&times;</button>
+      <h2 class="modal__title">Log In</h2>
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            placeholder="Enter your email"
+          >
+          <span class="form-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-input">
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              required 
+              placeholder="Enter your password"
+            >
+            <button type="button" class="password-toggle" id="togglePassword">
+              👁️
+            </button>
+          </div>
+          <span class="form-error" id="passwordError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <h1 class="hero__title">Smart Styles for Every Destination</h1>
+            <p class="hero__description">
+              Discover your perfect partner in travel where style meets versatile elegance while  
+              exploring the world with the Best Shop collection.
+            </p>
+            <a href="html/catalog.html" class="btn btn-primary">View All Items</a>
+          </div>
+          <div class="hero__image">
+            <img src="./assets/images/Homepage/suitcases main banner.png" alt="Travel Suitcase">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CMO Section -->
+    <section class="cmo-section">
+      <div class="container">
+        <div class="cmo-section__grid">
+          <div class="cmo-card">
+            <div class="cmo-card__image">
+              <img src="./assets/images/Homepage/CMO image.png" alt="Lilian Bennett">
+            </div>
+            <div class="cmo-card__content">
+              <p class="cmo-card__role">Chief Marketing Officer</p>
+              <h3 class="cmo-card__title">Aliquam Faucibus Odioeecom.</h3>
+              <p class="cmo-card__text">
+                Duis malesuada vel est neque pharetra suscipit  
+                malesuada elementum nisi. Duis nisl libero facilisis 
+                ut felis nec.
+              </p>
+              <p class="cmo-card__text">
+                Maecenas duis vestibulum elit et sed pharetra vulputate 
+                faucibus purus vel pulvinar.
+              </p>
+            </div>
+          </div>
+
+          <div class="discount-card">
+            <div class="discount-card__content">
+              <h2 class="discount-card__title">15% Discount</h2>
+              <p class="discount-card__text">
+                Quis sed mi donec mauris ultrices. Rhoncus a pellentesque 
+                duis commodo sed.
+              </p>
+              <button class="btn btn-primary">Get Discount</button>
+            </div>
+            <div class="discount-card__image">
+              <img src="./assets/images/Homepage/offer of the month image.png" alt="Discount Offer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Suitcases Slider -->
+    <section class="travel-section">
+      <div class="container">
+        <h2 class="section-title">Travel suitcases</h2>
+        <div class="slider" id="suitcaseSlider">
+          <div class="slider__track">
+            <div class="slider__slide">
+              <div class="slide-card">
+                <img src="./assets/images/Homepage/suitcase real-live-1.png" alt="Suitcase">
+                <div class="slide-card__overlay">
+                  <h3>Duis vestibulum elit pharetra.</h3>
+                  <p>
+                    Nam sollicitudin eu lectus ut eleifend. Nunc sollicitudin eu 
+                    quam sagittis aliquet. Suspendisse in sollicitudin odio ac 
+                    lectus libero ac iaculis ipsum. Pellentesque sagittis elementum 
+                    eu et risus mauris euismod.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <div class="slide-card">
+                <img src="./assets/images/Homepage/suitcase real-live-2.png" alt="Suitcase">
+                <div class="slide-card__overlay">
+                  <h3>Nunc sollicitudin eu lectus.</h3>
+                  <p>
+                    Duis malesuada vel est neque pharetra suscipit 
+                    malesuada elementum nisi. Duis nisl libero facilisis 
+                    ut felis nec vehicula mauris.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <div class="slide-card">
+                <img src="./assets/images/Homepage/suitcase real-live-3.png" alt="Suitcase">
+                <div class="slide-card__overlay">
+                  <h3>Vel sollicitudin euismod.</h3>
+                  <p>
+                    Maecenas duis vestibulum elit et sed pharetra vulputate 
+                    faucibus purus vel pulvinar tempor porttitor.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <div class="slide-card">
+                <img src="./assets/images/Homepage/suitcase real-live.png" alt="Suitcase">
+                <div class="slide-card__overlay">
+                  <h3>Quis facilisis pharetra.</h3>
+                  <p>
+                    Suspendisse in sollicitudin odio ac lectus libero ac iaculis 
+                    ipsum pellentesque sagittis elementum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Products -->
+    <section class="products-section">
+      <div class="container">
+        <h2 class="section-title">Selected Products</h2>
+        <div class="products-grid" id="selectedProducts">
+          <!-- Products will be loaded from JSON -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer of the Month -->
+    <section class="offer-section">
+      <div class="container">
+        <div class="offer-banner">
+          <div class="offer-banner__discount">
+            <span class="offer-banner__number">50%</span>
+            <p class="offer-banner__text">
+              Consequat adipiscing arcu nibh at  
+              bibendum in dolor odio.
+            </p>
+          </div>
+          <div class="offer-banner__content">
+            <h2 class="offer-banner__title">Offer Of The Month</h2>
+            <p class="offer-banner__description">
+              Quis sed mi donec mauris ultrices. Rhoncus a pellentesque  
+              duis commodo sed.
+            </p>
+            <button class="btn btn-primary">Get Offer Today</button>
+          </div>
+          <div class="offer-banner__image">
+            <img src="./assets/images/Homepage/offer of the month image.png" alt="Special Offer">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Products Arrival -->
+    <section class="products-section">
+      <div class="container">
+        <h2 class="section-title">New Products Arrival</h2>
+        <div class="products-grid" id="newProducts">
+          <!-- Products will be loaded from JSON -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Grateful Customers -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="section-title">Our Grateful Customers</h2>
+        <p class="section-subtitle">Duis sed magna sit vel est neque pharetra</p>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-card__image">
+              <img src="./assets/images/Homepage/grateful customer 1.png" alt="Customer">
+            </div>
+            <p class="testimonial-card__text">
+              Consequat vulputate arcu nibh at vel bibendum in  
+              turpis dolor mauris eu. AC malesuada at elementum  
+              pellentesque et suspendisse.
+            </p>
+            <p class="testimonial-card__name">Ethan Wade, New York</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-card__image">
+              <img src="./assets/images/Homepage/grateful customer 2.png" alt="Customer">
+            </div>
+            <p class="testimonial-card__text">
+              Consequat vulputate arcu nibh at vel bibendum in  
+              turpis dolor mauris eu. AC malesuada at elementum  
+              pellentesque et suspendisse.
+            </p>
+            <p class="testimonial-card__name">Jane Reyes, California</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-card__image">
+              <img src="./assets/images/Homepage/grateful customer 3.png" alt="Customer">
+            </div>
+            <p class="testimonial-card__text">
+              Consequat vulputate arcu nibh at vel bibendum in  
+              turpis dolor mauris eu. AC malesuada at elementum  
+              pellentesque et suspendisse.
+            </p>
+            <p class="testimonial-card__name">Erica Banks, Miami</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <i class="benefit-card__icon">🚚</i>
+            <h3 class="benefit-card__title">Our Benefits</h3>
+            <p class="benefit-card__text">
+              Duis sed magna velit est neque velit est.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <i class="benefit-card__icon">💳</i>
+            <h3 class="benefit-card__title">Secure payments</h3>
+            <p class="benefit-card__text">
+              Elementum elit vitae  
+              bibendum nec odio.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <i class="benefit-card__icon">🔄</i>
+            <h3 class="benefit-card__title">Warranty 2 years</h3>
+            <p class="benefit-card__text">
+              Maecenas massa elit  
+              pharetra eu blandit nec.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <i class="benefit-card__icon">🎁</i>
+            <h3 class="benefit-card__title">Premium membership</h3>
+            <p class="benefit-card__text">
+              Aliquam nunc odio,  
+              varius lobortis nisl.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__column">
+          <h4 class="footer__title">About Us</h4>
+          <ul class="footer__links">
+            <li><a href="#">Our Company</a></li>
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Our Team</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title">Shopping Links</h4>
+          <ul class="footer__links">
+            <li><a href="html/catalog.html">Order History</a></li>
+            <li><a href="html/catalog.html">Shop Orders</a></li>
+            <li><a href="#">Wish List</a></li>
+            <li><a href="#">Shop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title">Accessories</h4>
+          <ul class="footer__links">
+            <li><a href="#">Steering Stands</a></li>
+            <li><a href="#">Plugs</a></li>
+            <li><a href="#">Travel Adapters</a></li>
+            <li><a href="#">TSA Locks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title">Contact Us</h4>
+          <p class="footer__text">
+            Weekdays from 09:00-18:00. Weekend/public  
+            holidays: We're available by phone, Live Chat and email.
+          </p>
+          <div class="footer__contact">
+            <p>📞 Phone: +48-123-456-7890</p>
+            <p>✉️ info@bestshop.com</p>
+          </div>
+          <div class="footer__info">
+            <p>🏢 Mon- Fri: 8am - 9pm</p>
+            <p>🏖️ Sat-Sun: Weekend</p>
+            <p>🗺️ 123 Fifth Avenue,</p>
+            <p>New York, NY 101650</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__shipping">
+          Shipping Information: Lorem ipsum dolor sit amet consectetur in ut amet aliquam 
+          amet quam. Duis elit porttitor placerat molestie nec ullamcorper nam. Turpis 
+          tristique non faucibus vitae tortor felis venenatis. Euismod varius etiam porta  
+          faucibus consectetur pharetra amet sit vulputate libero. Auctor faucibus proin  
+          amet quis velit. Lorem auctor sed pharetra tempor est eget. Bibendum ligula  
+          viverra eget lacinia ultricies.
+        </p>
+        <p class="footer__copyright">© 2024 Best Shop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./ts/main.ts"></script>
+  <script type="module" src="./ts/home.ts"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:color';
+
+.cart-page {
+  padding: 2rem 0;
+  min-height: 60vh;
+
+  &__header {
+    @include flex-between;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: $font-size-xxl;
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 4rem 2rem;
+
+    h2 {
+      font-size: $font-size-xl;
+      margin-bottom: 1rem;
+      color: $text-light;
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+.cart-items {
+  @include flex-column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: $white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+
+  @include mobile {
+    @include flex-column;
+  }
+
+  &__image {
+    flex: 0 0 120px;
+
+    img {
+      width: 100%;
+      border-radius: $border-radius;
+    }
+  }
+
+  &__info {
+    flex: 1;
+
+    h3 {
+      font-size: $font-size-lg;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $text-light;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    button {
+      @include button-reset;
+      width: 32px;
+      height: 32px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      @include flex-center;
+      @include transition;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+      }
+    }
+
+    input {
+      width: 50px;
+      text-align: center;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      padding: 0.25rem;
+    }
+  }
+
+  &__price {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
+  }
+
+  &__remove {
+    @include button-reset;
+    color: $error-color;
+    @include transition;
+
+    &:hover {
+      color: color.adjust($error-color, $lightness: -10%);
+    }
+  }
+}
+
+.cart-summary {
+  background: $background-light;
+  padding: 2rem;
+  border-radius: $border-radius-lg;
+
+  &__title {
+    font-size: $font-size-xl;
+    margin-bottom: 1.5rem;
+  }
+
+  &__row {
+    @include flex-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border: none;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    button {
+      flex: 1;
+    }
+  }
+}

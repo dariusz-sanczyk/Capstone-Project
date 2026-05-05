@@ -1,0 +1,181 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  background: $white;
+  box-shadow: $box-shadow-sm;
+  z-index: $z-index-header;
+  padding: 1rem 0 0;
+
+  &__top {
+    @include flex-between;
+    padding-bottom: 1rem;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      color: $secondary-color;
+      font-size: 1.25rem;
+      @include transition;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__logo {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: $secondary-color;
+    }
+
+    .logo-icon {
+      font-size: 1.5rem;
+    }
+
+    .logo-text {
+      color: $primary-color;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+
+    .icon-btn {
+      position: relative;
+      @include button-reset;
+      font-size: 1.25rem;
+      color: $secondary-color;
+      @include transition(color);
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .cart-counter {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: $primary-color;
+      color: $white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  &__nav {
+    border-top: 1px solid $border-color;
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+
+      @include mobile {
+        position: fixed;
+        top: 120px;
+        left: 0;
+        right: 0;
+        background: $white;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem;
+        box-shadow: $box-shadow;
+        display: none;
+        z-index: 999;
+
+        &.active {
+          display: flex;
+        }
+
+        li {
+          border-bottom: 1px solid $border-color;
+          
+          &:last-child {
+            border: none;
+          }
+        }
+
+        a {
+          display: block;
+          padding: 1rem;
+        }
+      }
+    }
+
+    .nav-link {
+      font-weight: 500;
+      @include transition(color);
+
+      &:hover,
+      &.active {
+        color: $primary-color;
+      }
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      position: absolute;
+      right: 1rem;
+
+      span {
+        width: 24px;
+        height: 3px;
+        background: $secondary-color;
+        @include transition;
+        border-radius: 2px;
+      }
+
+      &.active {
+        span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        
+        span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+      }
+
+      @include mobile {
+        display: flex;
+      }
+    }
+  }
+}
